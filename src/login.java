@@ -29,6 +29,8 @@ public class login {
                 CardLayout cardLayout = (CardLayout) menu.loginmain.getLayout();
                 if(e.getSource() == loginButton)
                 {
+                    formattedTextField1.setValue("");
+                    passwordField1.setText("");
                     cardLayout.show(menu.loginmain,"menu");
                 }
             }

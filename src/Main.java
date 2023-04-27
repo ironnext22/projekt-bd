@@ -3,8 +3,8 @@ import java.awt.*;
 
 public class Main
 {
-    private JPanel pom = new JPanel(new CardLayout());
-    private login login = new login();
+    private final JPanel pom = new JPanel(new CardLayout());
+
     JFrame frame = new JFrame("main");
     public static void main(String[] args)
     {
@@ -17,6 +17,7 @@ public class Main
     }
     public Main()
     {
+        login login = new login();
         pom.add(login.menu.loginmain,"login");
 
     }
