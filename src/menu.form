@@ -25,7 +25,7 @@
         <children>
           <component id="1566f" class="javax.swing.JButton" binding="button2" default-binding="true">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="50" height="60"/>
               </grid>
             </constraints>
@@ -50,16 +50,6 @@
               </grid>
             </constraints>
           </vspacer>
-          <component id="9cf9b" class="javax.swing.JButton" binding="button1" default-binding="true">
-            <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="60"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Button"/>
-            </properties>
-          </component>
           <component id="c98c0" class="javax.swing.JButton" binding="button3" default-binding="true">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
@@ -106,12 +96,22 @@
           </component>
           <hspacer id="8c72e">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="10" height="-1"/>
                 <maximum-size width="10" height="-1"/>
               </grid>
             </constraints>
           </hspacer>
+          <component id="9cf9b" class="javax.swing.JButton" binding="button1" default-binding="true">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="50" height="60"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Button"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="12166" binding="main" layout-manager="CardLayout" hgap="0" vgap="0">

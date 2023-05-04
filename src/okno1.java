@@ -1,5 +1,5 @@
 import javax.swing.*;
 
-public class test {
+public class okno1 {
     public JPanel test;
 }
