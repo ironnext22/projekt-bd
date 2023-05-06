@@ -13,20 +13,21 @@ public class menu {
     private JButton button3;
     private JButton button4;
     private JButton button5;
-    public JPanel loginmain = new JPanel(new CardLayout());
     private okno1 t = new okno1();
     private okno2 t2 = new okno2();
+    public Register register = new Register();
     public menu()
     {
         main.add(t.test,"okno1");
         main.add(t2.okno,"okno2");
-        loginmain.add(menu,"menu");
+        register.loginmain.add(menu,"menu");
+        register.loginmain.add(register.rejestracja,"rej");
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                    CardLayout cardLayout = (CardLayout) loginmain.getLayout();
-                    cardLayout.show(loginmain,"login");
+                    CardLayout cardLayout = (CardLayout) register.loginmain.getLayout();
+                    cardLayout.show(register.loginmain,"login");
             }
         });
         button1.addActionListener(new ActionListener() {

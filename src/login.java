@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class login {
-    public konta konta = new konta();
     public JPanel login;
     private JTextField loginTextField;
     private JFormattedTextField formattedTextField1;
@@ -23,23 +22,22 @@ public class login {
         loginButton.setFocusPainted(false);
         Register.setBorder(null);
         Register.setFocusPainted(false);
-        menu.loginmain.add(login,"login");
-        menu.loginmain.add(menu.menu,"menu");
-        CardLayout cardLayout = (CardLayout) menu.loginmain.getLayout();
-        cardLayout.show(menu.loginmain,"login");
+        menu.register.loginmain.add(login,"login");
+        CardLayout cardLayout = (CardLayout) menu.register.loginmain.getLayout();
+        cardLayout.show(menu.register.loginmain,"login");
         error.setVisible(false);
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                CardLayout cardLayout = (CardLayout) menu.loginmain.getLayout();
+                CardLayout cardLayout = (CardLayout) menu.register.loginmain.getLayout();
                 if(e.getSource() == loginButton)
                 {
-                    if(konta.find(formattedTextField1.getText(),new String(passwordField1.getPassword())) == 1)
+                    if(menu.register.konta.find(formattedTextField1.getText(),new String(passwordField1.getPassword())) == 1)
                     {
                         formattedTextField1.setValue("");
                         passwordField1.setText("");
-                        cardLayout.show(menu.loginmain, "menu");
+                        cardLayout.show(menu.register.loginmain, "menu");
                         error.setVisible(false);
                     }
                     else
@@ -54,9 +52,11 @@ public class login {
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                CardLayout cardLayout = (CardLayout) menu.register.loginmain.getLayout();
                 if(e.getSource()==Register)
                 {
-
+                    cardLayout.show(menu.register.loginmain,"rej");
+                    error.setVisible(false);
                 }
             }
         });

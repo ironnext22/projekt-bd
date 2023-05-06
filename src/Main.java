@@ -17,7 +17,7 @@ public class Main
     public Main()
     {
         login login = new login();
-        pom.add(login.menu.loginmain,"login");
+        pom.add(login.menu.register.loginmain,"login");
 
     }
 }
