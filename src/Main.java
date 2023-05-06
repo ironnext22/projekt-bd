@@ -4,7 +4,6 @@ import java.awt.*;
 public class Main
 {
     private final JPanel pom = new JPanel(new CardLayout());
-
     JFrame frame = new JFrame("main");
     public static void main(String[] args)
     {
