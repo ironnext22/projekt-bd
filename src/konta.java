@@ -35,12 +35,4 @@ public class konta {
         pom.append("haslo",haslo);
         return col.countDocuments(pom);
     }
-    public static void main( String args[] ) {
-        //konta konto = new konta();
-
-        //konto.add("Panda","Zebra","Kot","Pies");
-        //konto.print();
-        //konto.find("admin","admin");
-        //konto.clear();
-    }
 }
