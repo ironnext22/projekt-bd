@@ -35,4 +35,9 @@ public class konta {
         pom.append("haslo",haslo);
         return col.countDocuments(pom);
     }
+    public long find2(String login)
+    {
+        Document pom = new Document("login",login);
+        return col.countDocuments(pom);
+    }
 }
