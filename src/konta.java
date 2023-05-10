@@ -5,7 +5,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
 public class konta {
-    private MongoClient client = MongoClients.create("mongodb+srv://wiktork2002:Wk102030@test.9eo0luc.mongodb.net/?retryWrites=true&w=majority");
+    private MongoClient client = MongoClients.create("mongodb://localhost:27017");
     private MongoDatabase db = client.getDatabase("konta");
     private MongoCollection<Document> col = db.getCollection("konta");
     public void add(String login,String haslo, String imie, String nazwisko)
