@@ -12,6 +12,7 @@ public class login {
     private JButton loginButton;
     private JButton Register;
     private JTextArea error;
+    private JPanel err;
     public menu menu = new menu();
 
     public login()
