@@ -1,3 +1,5 @@
+package okna;
+
 import javax.swing.*;
 
 public class okno2 {

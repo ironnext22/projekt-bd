@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class login {
     public JPanel login;
@@ -15,8 +16,7 @@ public class login {
     private JPanel err;
     public menu menu = new menu();
 
-    public login()
-    {
+    public login() throws SQLException {
         hasłoTextField.setBorder(null);
         loginTextField.setBorder(null);
         loginButton.setBorder(null);

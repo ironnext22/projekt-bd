@@ -1,7 +1,11 @@
+import okna.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class menu {
     public JButton back;
@@ -13,11 +17,11 @@ public class menu {
     private JButton wynajemButton;
     private JButton zwrotButton;
     private JButton karyButton;
-    private okno1 t = new okno1();
+    private Connection connection = baza.connect();
+    private okno1 t = new okno1(connection);
     private okno2 t2 = new okno2();
     public Register register = new Register();
-    public menu()
-    {
+    public menu() throws SQLException {
         main.add(t.test,"okno1");
         main.add(t2.okno,"okno2");
         register.loginmain.add(menu,"menu");

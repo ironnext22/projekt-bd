@@ -1,12 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class Main
 {
     private final JPanel pom = new JPanel(new CardLayout());
     JFrame frame = new JFrame("main");
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws SQLException {
         Main okno = new Main();
         okno.frame.setPreferredSize(new Dimension(1000,900));
         okno.frame.add(okno.pom);
@@ -14,10 +14,8 @@ public class Main
         okno.frame.pack();
         okno.frame.setVisible(true);
     }
-    public Main()
-    {
+    public Main() throws SQLException {
         login login = new login();
         pom.add(login.menu.register.loginmain,"login");
-
     }
 }
