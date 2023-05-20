@@ -30,7 +30,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Zwroty"/>
+              <text value="+"/>
             </properties>
           </component>
           <component id="e5fd3" class="javax.swing.JButton" binding="back">
@@ -50,14 +50,14 @@
               </grid>
             </constraints>
           </vspacer>
-          <component id="c98c0" class="javax.swing.JButton" binding="wynajemButton" default-binding="true">
+          <component id="c98c0" class="javax.swing.JButton" binding="filmButton">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="50" height="60"/>
               </grid>
             </constraints>
             <properties>
-              <text value="Wynajem+"/>
+              <text value="film+"/>
             </properties>
           </component>
           <vspacer id="c38e4">
@@ -74,24 +74,24 @@
               </grid>
             </constraints>
           </vspacer>
-          <component id="3da0e" class="javax.swing.JButton" binding="zwrotButton" default-binding="true">
+          <component id="3da0e" class="javax.swing.JButton" binding="wynajemButton" default-binding="true">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="50" height="60"/>
               </grid>
             </constraints>
             <properties>
-              <text value="Zwrot+"/>
+              <text value="Wynajem"/>
             </properties>
           </component>
-          <component id="28a10" class="javax.swing.JButton" binding="karyButton" default-binding="true">
+          <component id="28a10" class="javax.swing.JButton" binding="zwrotButton" default-binding="true">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="50" height="60"/>
               </grid>
             </constraints>
             <properties>
-              <text value="Kary"/>
+              <text value="Zwrot"/>
             </properties>
           </component>
           <hspacer id="8c72e">
@@ -109,7 +109,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Wynajmy"/>
+              <text value="Tabele"/>
             </properties>
           </component>
         </children>

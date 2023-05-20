@@ -47,6 +47,13 @@ public class baza {
         ResultSet resultSet = statement.executeQuery(sqlQuery1);
         return getObj(resultSet);
     }
+    public Object[][] getwypo() throws SQLException
+    {
+        String sqlQuery1 = "CALL wypożyczenia()";
+        Statement statement = con.createStatement();
+        ResultSet resultSet = statement.executeQuery(sqlQuery1);
+        return getObj(resultSet);
+    }
     private Object[][] getObj(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         int columnCount = metaData.getColumnCount();
@@ -65,6 +72,30 @@ public class baza {
             row++;
         }
         return kara;
+    }
+    public void addGatunek(String gatunek) throws SQLException
+    {
+        String sqlQuery1 = "INSERT INTO gatunek VALUES(null,'"+gatunek+"')";
+        Statement statement = con.createStatement();
+        statement.executeQuery(sqlQuery1);
+    }
+    public void addRez(String imie, String nazwisko) throws SQLException
+    {
+        String sqlQuery1 = "INSERT INTO reżyser VALUES(null,'"+imie+"','"+nazwisko+"')";
+        Statement statement = con.createStatement();
+        statement.executeQuery(sqlQuery1);
+    }
+    public void addAktor(String imie, String nazwisko,String narodowość) throws SQLException
+    {
+        String sqlQuery1 = "INSERT INTO aktor VALUES(null,'"+imie+"','"+nazwisko+"','"+narodowość+"')";
+        Statement statement = con.createStatement();
+        statement.executeQuery(sqlQuery1);
+    }
+    public void addwytw(String wytw) throws SQLException
+    {
+        String sqlQuery1 = "INSERT INTO wytwórnia VALUES(null,'"+wytw+"')";
+        Statement statement = con.createStatement();
+        statement.executeQuery(sqlQuery1);
     }
 
 }

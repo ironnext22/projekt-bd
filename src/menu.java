@@ -14,12 +14,12 @@ public class menu {
     private JPanel manu;
     private JButton button2;
     private JButton button1;
+    private JButton filmButton;
     private JButton wynajemButton;
     private JButton zwrotButton;
-    private JButton karyButton;
     private Connection connection = baza.connect();
-    private okno1 t = new okno1(connection);
-    private okno2 t2 = new okno2();
+    private tabele t = new tabele(connection);
+    private dodaj t2 = new dodaj(connection);
     public Register register = new Register();
     public menu() throws SQLException {
         main.add(t.test,"okno1");
