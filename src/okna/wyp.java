@@ -25,7 +25,7 @@ public class wyp {
     private HashMap<String,String> klientd = new HashMap<>();
     LocalDate currentDate = LocalDate.now();
     baza pom = new baza();
-    public wyp(Connection baza) throws SQLException {
+    public wyp(Connection baza, tabele tab) throws SQLException {
         pom.con(baza);
         wczytajfilm();
         wczytajklienta();
@@ -46,6 +46,11 @@ public class wyp {
                         data.setText(currentDate.toString());
                         długość.setText("");
                         cena.setText("");
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    try {
+                        tab.reload();
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -81,5 +86,11 @@ public class wyp {
         String sqlQuery1 = "INSERT INTO wypożyczenia VALUES(null,"+film+","+klient+",'"+data+"',"+dlugosc+","+cena+")";
         Statement statement = pom.con.createStatement();
         statement.executeQuery(sqlQuery1);
+    }
+    public void reload() throws SQLException {
+        wczytajfilm();
+        wczytajklienta();
+        film.setModel(new DefaultComboBoxModel(filmh.toArray()));
+        klient.setModel(new DefaultComboBoxModel(klienth.toArray()));
     }
 }

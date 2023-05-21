@@ -20,12 +20,12 @@ public class menu {
     private JButton klienci;
     private Connection connection = baza.connect();
     private tabele t = new tabele(connection);
-    private filmy t3 = new filmy(connection,t);
-    private dodaj t2 = new dodaj(connection,t3);
-    private wyp t4 = new wyp(connection);
-    private zwroty t5 = new zwroty(connection);
+    private wyp t4 = new wyp(connection,t);
+    private zwroty t5 = new zwroty(connection, t4, t);
     private Klienci t6 = new Klienci(connection,t,t4);
     public Register register = new Register();
+    private filmy t3 = new filmy(connection,t,t4);
+    private dodaj t2 = new dodaj(connection,t3);
     public menu() throws SQLException {
         main.add(t.test,"tabele");
         main.add(t2.okno,"dadaj");

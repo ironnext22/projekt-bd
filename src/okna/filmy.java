@@ -28,7 +28,7 @@ public class filmy {
     private ArrayList<String> rol = new ArrayList<>();
     private HashMap<String,Integer> rolw= new HashMap<>();
     public baza bazapom = new baza();
-    public filmy(Connection baza,tabele p) throws SQLException {
+    public filmy(Connection baza,tabele p, wyp wyp) throws SQLException {
         this.po = p;
         this.bazapom.con(baza);
         wczytajrez();
@@ -57,6 +57,11 @@ public class filmy {
                         }
                         try {
                             po.reload();
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        try {
+                            wyp.reload();
                         } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }

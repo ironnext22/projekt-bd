@@ -51,6 +51,11 @@ public class Klienci {
                         } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }
+                        try {
+                            wyp.reload();
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
                     }
                 }
             }
