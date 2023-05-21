@@ -6,7 +6,7 @@ public class baza {
     private static final String URL = "jdbc:mariadb://localhost:3306/bazaprojekt";
     private static final String user = "root";
     private static final String password = "";
-    Connection con;
+    public Connection con;
     public void con(Connection connection)
     {
         con=connection;
@@ -54,7 +54,7 @@ public class baza {
         ResultSet resultSet = statement.executeQuery(sqlQuery1);
         return getObj(resultSet);
     }
-    private Object[][] getObj(ResultSet resultSet) throws SQLException {
+    public Object[][] getObj(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         int columnCount = metaData.getColumnCount();
         resultSet.last();
@@ -97,5 +97,19 @@ public class baza {
         Statement statement = con.createStatement();
         statement.executeQuery(sqlQuery1);
     }
-
+    public void addfilm(String tytul,Integer rez,Integer gat, Integer wytw, Integer RG) throws SQLException
+    {
+        String rezs = Integer.toString(rez);
+        String gats = Integer.toString(gat);
+        String wytws = Integer.toString(wytw);
+        String RGS = Integer.toString(RG);
+        String sqlQuery1 = "INSERT INTO filmy VALUES(null,'"+tytul+"',"+rezs+","+gats+","+wytws+","+RGS+")";
+        Statement statement = con.createStatement();
+        statement.executeQuery(sqlQuery1);
+    }
+    public void addklient(String imie,String nazwisko, String pesel, String adres, String kod, String miejscowość, String nr, String mail) throws SQLException {
+        String sqlQuery1 = "INSERT INTO klienci VALUES(null,'"+imie+"','"+nazwisko+"',"+pesel+",'"+adres+"','"+kod+"','"+miejscowość+"',"+nr+",'"+mail+"')";
+        Statement statement = con.createStatement();
+        statement.executeQuery(sqlQuery1);
+    }
 }

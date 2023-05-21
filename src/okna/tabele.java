@@ -61,4 +61,27 @@ public class tabele {
     {
         tabela.setModel(new DefaultTableModel(data,tytul));
     }
+    public void reload() throws SQLException {
+        kary_data = this.baza.getkara();
+        filmy_data = this.baza.getfilmy();
+        klienci_data = this.baza.getklienci();
+        wyp_data = this.baza.getwypo();
+        String selectedOption = (String) zniana_tabel.getSelectedItem();
+        if(selectedOption == "Kary")
+        {
+            setTable(kary,kary_data);
+        }
+        else if(selectedOption == "Filmy")
+        {
+            setTable(filmy,filmy_data);
+        }
+        else if(selectedOption == "Klienci")
+        {
+            setTable(klienci,klienci_data);
+        }
+        else if(selectedOption == "Wypożyczenia")
+        {
+            setTable(wyp,wyp_data);
+        }
+    }
 }

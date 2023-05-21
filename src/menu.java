@@ -17,13 +17,22 @@ public class menu {
     private JButton filmButton;
     private JButton wynajemButton;
     private JButton zwrotButton;
+    private JButton klienci;
     private Connection connection = baza.connect();
     private tabele t = new tabele(connection);
-    private dodaj t2 = new dodaj(connection);
+    private filmy t3 = new filmy(connection,t);
+    private dodaj t2 = new dodaj(connection,t3);
+    private wyp t4 = new wyp(connection);
+    private zwroty t5 = new zwroty(connection);
+    private Klienci t6 = new Klienci(connection,t,t4);
     public Register register = new Register();
     public menu() throws SQLException {
-        main.add(t.test,"okno1");
-        main.add(t2.okno,"okno2");
+        main.add(t.test,"tabele");
+        main.add(t2.okno,"dadaj");
+        main.add(t3.filmy,"filmy");
+        main.add(t4.wyp,"wyp");
+        main.add(t5.zwrot,"zwroty");
+        main.add(t6.klientci,"klienci");
         register.loginmain.add(menu,"menu");
         register.loginmain.add(register.rejestracja,"rej");
         back.addActionListener(new ActionListener() {
@@ -37,8 +46,13 @@ public class menu {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    CardLayout cardLayout = (CardLayout) main.getLayout();
-                    cardLayout.show(main,"okno1");
+                try {
+                    t.reload();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                CardLayout cardLayout = (CardLayout) main.getLayout();
+                cardLayout.show(main,"tabele");
             }
         });
 
@@ -46,8 +60,36 @@ public class menu {
             @Override
             public void actionPerformed(ActionEvent e) {
                     CardLayout cardLayout = (CardLayout) main.getLayout();
-                    cardLayout.show(main,"okno2");
+                    cardLayout.show(main,"dadaj");
 
+            }
+        });
+        filmButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) main.getLayout();
+                cardLayout.show(main,"filmy");
+            }
+        });
+        wynajemButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) main.getLayout();
+                cardLayout.show(main,"wyp");
+            }
+        });
+        zwrotButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) main.getLayout();
+                cardLayout.show(main,"zwroty");
+            }
+        });
+        klienci.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) main.getLayout();
+                cardLayout.show(main,"klienci");
             }
         });
     }

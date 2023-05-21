@@ -24,8 +24,10 @@ public class dodaj {
     private JTextArea error4;
     private JButton Wdodaj;
     baza pom = new baza();
-    public dodaj(Connection baza)
+    filmy po;
+    public dodaj(Connection baza, filmy p)
     {
+        po = p;
         error1.setVisible(false);
         error2.setVisible(false);
         error3.setVisible(false);
@@ -47,6 +49,11 @@ public class dodaj {
                             gatunek.setText("");
                         } catch (SQLException ex) {
                             error1.setVisible(true);
+                            throw new RuntimeException(ex);
+                        }
+                        try {
+                            po.reload();
+                        } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }
                     }
@@ -71,6 +78,11 @@ public class dodaj {
                             Rnazwisko.setText("");
                         } catch (SQLException ex) {
                             error2.setVisible(true);
+                            throw new RuntimeException(ex);
+                        }
+                        try {
+                            po.reload();
+                        } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }
                     }
@@ -98,6 +110,11 @@ public class dodaj {
                             error3.setVisible(true);
                             throw new RuntimeException(ex);
                         }
+                        try {
+                            po.reload();
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
                     }
                 }
             }
@@ -119,6 +136,11 @@ public class dodaj {
                             Wytwórnia.setText("");
                         } catch (SQLException ex) {
                             error4.setVisible(true);
+                            throw new RuntimeException(ex);
+                        }
+                        try {
+                            po.reload();
+                        } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }
                     }
